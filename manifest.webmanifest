@@ -1,0 +1,8 @@
+{
+  "name": "Expiry Date",
+  "short_name": "Expiry Date",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#f6f7f9"
+}
