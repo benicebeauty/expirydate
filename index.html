@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#121212">
+    <meta name="description" content="Look up product expiry dates from their shelf life.">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <title>Expiry Date</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Expiry Date home">EXPIRY DATE</a>
+        <button id="menu-button" class="icon-button" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        <nav id="menu" class="menu" hidden>
+          <button type="button" data-view="add">Add product</button>
+          <button type="button" data-view="products">All products</button>
+        </nav>
+      </header>
+
+      <section id="home-view" class="view">
+        <p id="today" class="muted"></p>
+        <label class="sr-only" for="search">Search product</label>
+        <input id="search" class="search" type="search" placeholder="Search product..." autocomplete="off">
+        <div id="suggestions" class="suggestions" aria-live="polite"></div>
+        <article id="expiry-result" class="expiry-result" hidden>
+          <h2 id="result-name"></h2>
+          <p id="result-date"></p>
+        </article>
+      </section>
+
+      <section id="add-view" class="view" hidden>
+        <button class="text-button back-button" type="button" data-view="home">← Back</button>
+        <h1>Add product</h1>
+        <label for="product-name">Product name</label>
+        <input id="product-name" type="text" autocomplete="off">
+        <label for="catalog-select">Choose product from list</label>
+        <select id="catalog-select"><option value="">Choose a product…</option></select>
+        <label for="shelf-life">Shelf life (days)</label>
+        <input id="shelf-life" type="number" min="1" inputmode="numeric" placeholder="For example: 7">
+        <p id="fixed-shelf-note" class="muted" hidden>This product has a fixed shelf life.</p>
+        <button id="save-product" class="primary-button" type="button">Save product</button>
+        <p id="add-message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section id="products-view" class="view" hidden>
+        <button class="text-button back-button" type="button" data-view="home">← Back</button>
+        <h1>All products</h1>
+        <div class="action-row">
+          <button id="export-button" class="secondary-button" type="button">Export list</button>
+          <button id="import-button" class="secondary-button" type="button">Import list</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+        <p id="products-message" class="message" aria-live="polite"></p>
+        <div id="product-list" class="product-list"></div>
+      </section>
+      <footer>Product data is saved in this browser on this device.</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
