@@ -12,7 +12,7 @@ const CATALOG = [
   ["Olives", 10], ["Pepperdew Piquante Peppers", 26], ["Pepperoni", 12],
   ["Pesto Drizzle", 21], ["Pineapple", 10], ["Pizza Sauce", 10],
   ["Pizza Sauce Pro-Bake Drizzle", 10], ["Plant-Based Cheese Alternative", 7],
-  ["Potato Wedges", 7], ["Sausage", 6], ["Sliced Gherkins", 16],
+  ["Potato Wedges", 7], ["Sage and Onion Turkey", 7], ["Sausage", 6], ["Sliced Gherkins", 16],
   ["Sundried Tomato and Garlic", 10], ["Sweetcorn", 11], ["Tandoori Chicken", 10],
   ["Thin Crust Shells - (All sizes)", 21], ["Tuna", 6], ["Wraps", 22]
 ].sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase(), "en"));
